@@ -26,7 +26,7 @@ if tanh:
     np.save("winners",y)
 else:
     x=np.ndarray([50000,226])
-    y=np.ndarray([50000,2])
+    y=np.ndarray([50000])
     for i in range(50000):
         for j in range(10):
             hero = int(players.readline().split(",")[2])
@@ -36,10 +36,8 @@ else:
                 x[i, hero+113] = 1
 
         if match.readline().split(",")[9]=="TRUE":
-            y[i][0]=1
-            y[i][1] = 0
+            y[i]=1
         else:
-            y[i][0]=0
-            y[i][1] = 1
+            y[i]=0
     np.save("picks2",x)
-    np.save("winners2",y)
+    np.save("winners01",y)
